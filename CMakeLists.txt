@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_COMPILER "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++")
 set(CMAKE_C_COMPILER "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang")
 
+set (CMAKE_CXX_STANDARD 20)
+
 # set the project name
 project(BasedGUI)
 
@@ -34,10 +36,14 @@ add_definitions(
     -D_CRT_SECURE_NO_WARNINGS
 )
 
-file(GLOB_RECURSE sources  src/*.cpp src/*.h)
+# add the source code
+file(GLOB_RECURSE SOURCES
+    src/*.cpp
+    src/*.h
+    )
 
 # add the executable
-add_executable(BasedGUI ${sources})
+add_executable(BasedGUI ${SOURCES})
 
 # final linkage
 target_link_libraries(BasedGUI
