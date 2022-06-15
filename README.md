@@ -2,7 +2,8 @@
 `BasedGUI` is an OpenGL rendering framework.<br>
 
 ## Setup
-First install the dependencies listed below into the `libs` folder.<br>
+Make sure to set the env variables `CXX_COMPILER` and `C_COMPILER` to your respective c++ and c compilers.<br>
+Then install the dependencies listed below into the `libs` folder.<br>
 Then simply execute the `setup.sh`, which will generate the XCode or Visual Studio project.<br>
 
 ## Dependencies

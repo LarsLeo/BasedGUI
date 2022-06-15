@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(CMAKE_CXX_COMPILER "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++")
-set(CMAKE_C_COMPILER "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang")
-
+set(CMAKE_CXX_COMPILER $ENV{CXX_COMPILER})
+set(CMAKE_C_COMPILER $ENV{C_COMPILER})
 set (CMAKE_CXX_STANDARD 20)
+
 set(GLFW_LIB glfw-3.3.7)
 set(GLEW_LIB glew-2.1.0)
 set(ASSIMP_LIB assimp-5.2.4)
