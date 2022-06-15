@@ -11,7 +11,6 @@
 #define numVAOs 1
 
 using namespace glm;
-using namespace std;
 
 GLuint renderingProgram;
 GLuint vao[numVAOs];
@@ -55,7 +54,7 @@ int main( void )
 
     glClearColor(0.0f, 0.0f, 1.0f, 0.0f);
 
-    unique_ptr<Renderer> renderer = make_unique<Renderer>();
+    std::unique_ptr<Renderer> renderer = std::make_unique<Renderer>();
     renderer->init(window);
 
     do{
