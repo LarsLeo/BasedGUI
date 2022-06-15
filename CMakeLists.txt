@@ -4,6 +4,7 @@ set(CMAKE_CXX_COMPILER $ENV{CXX_COMPILER})
 set(CMAKE_C_COMPILER $ENV{C_COMPILER})
 set (CMAKE_CXX_STANDARD 20)
 
+set(PROJECT_NAME BasedGUI)
 set(GLFW_LIB glfw-3.3.7)
 set(GLEW_LIB glew-2.1.0)
 set(ASSIMP_LIB assimp-5.2.4)
@@ -12,14 +13,23 @@ set(BULLET_LIB bullet3-3.24)
 set(BULLET_VERSION 3.24) # needs to be set for bullets CMakeLists to work
 
 # set the project name
-project(BasedGUI)
+project(${PROJECT_NAME})
 
 find_package(OpenGL REQUIRED)
 
-# Compile external libs
-add_subdirectory (libs)
+# add the source code
+file(GLOB_RECURSE SOURCES
+    src/*.cpp
+    src/*.h
+    )
 
-include_directories(
+# add the executable
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# Add libs
+add_subdirectory (libs)
+target_include_directories(${PROJECT_NAME} PRIVATE
+    src
     libs/${GLFW_LIB}/include/
     libs/${GLM_LIB}/
     libs/${GLEW_LIB}/include/
@@ -34,6 +44,7 @@ set(ALL_LIBS
     GLEW_210
 )
 
+# Compiler definitions
 add_definitions(
     -DTW_STATIC
     -DTW_NO_LIB_PRAGMA
@@ -42,16 +53,7 @@ add_definitions(
     -D_CRT_SECURE_NO_WARNINGS
 )
 
-# add the source code
-file(GLOB_RECURSE SOURCES
-    src/*.cpp
-    src/*.h
-    )
-
-# add the executable
-add_executable(BasedGUI ${SOURCES})
-
 # final linkage
-target_link_libraries(BasedGUI
+target_link_libraries(${PROJECT_NAME}
     ${ALL_LIBS}
 )
