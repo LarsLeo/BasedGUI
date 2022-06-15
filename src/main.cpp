@@ -42,7 +42,6 @@ int main( void )
     glfwMakeContextCurrent(window);
 
     // Initialize GLEW
-    glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK) {
         fprintf(stderr, "Failed to initialize GLEW\n");
         glfwTerminate();
