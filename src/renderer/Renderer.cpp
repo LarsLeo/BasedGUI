@@ -77,7 +77,7 @@ void Renderer::display(GLFWwindow* window, double currentTime)
 
 GLuint Renderer::createShaderProgram()
 {
-    const std::string baseVertexContent = FileUtils::readFile(ShaderConsts::BASE_VERTEX_SRC);
+    const std::string baseVertexContent = FileUtils::readFile(ShaderConsts::BASE_VERTEX_SCALE);
     const std::string baseFragmentContent = FileUtils::readFile(ShaderConsts::BASE_FRAGMENT_SRC);
     const char* vShaderSource = baseVertexContent.c_str();
     const char* fShaderSource = baseFragmentContent.c_str();
