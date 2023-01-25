@@ -7,7 +7,7 @@ set (CMAKE_CXX_STANDARD 20)
 set(PROJECT_NAME BasedGUI)
 set(GLFW_LIB glfw-3.3.7)
 set(GLEW_LIB glew-2.1.0)
-set(ASSIMP_LIB assimp-5.2.4)
+set(ASSIMP_LIB assimp-5.2.5)
 set(GLM_LIB glm-0.9.9.8)
 set(BULLET_LIB bullet3-3.24)
 set(BULLET_VERSION 3.24) # needs to be set for bullets CMakeLists to work
