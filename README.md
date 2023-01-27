@@ -7,3 +7,4 @@ Simply execute the `setup.sh`, which will generate the XCode or Visual Studio pr
 ## Usage
 `Work in progress!`<br>
 You can put `GLSL` shaders into the `res/shaders` directory. Then make sure to also add them into the `ShaderConsts` class for simple usage.<br>
+
